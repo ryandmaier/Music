@@ -13,9 +13,9 @@ class Music:
     #all = getSound(128, 0.5) # 82 sublists, each 512 long
     #all = getSound(256, 0.5) # 43 sublists, each 1024 long
 
-def getSound(sublistSize, rec_secs):
+def getSound(CHUNK, rec_secs):
 
-  CHUNK = sublistSize # nt(numData/rec_secs) # default 128
+  # CHUNK = sublistSize # nt(numData/rec_secs) # default 128
   p = pyaudio.PyAudio()
   rate = 44100
   RECORD_SECONDS = rec_secs
