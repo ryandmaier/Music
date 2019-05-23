@@ -10,8 +10,15 @@ class Music:
   def main(self):
     print('hi')
     all = self.getSound(128, 1) # 344, 256
+    print(self.getCosData(1,300,1))
     #all = getSound(128, 0.5) # 82 sublists, each 512 long
     #all = getSound(256, 0.5) # 43 sublists, each 1024 long
+
+  def getCosData(self, freq, numData, time):
+    all = []
+    for i in range(0,numData):
+        all.append(int(1000*math.cos(2*math.pi*freq*time*i/numData)))
+    return all
 
   def getSound(self, CHUNK, rec_secs):
     # CHUNK = sublistSize # nt(numData/rec_secs) # default 128
@@ -32,10 +39,10 @@ class Music:
         #all+=data
     print("* done recording")
 
-    for dat in all:
-        print(numpy.frombuffer(dat, numpy.int16), '\n\n')
-    print(len(all))
-    print(len(numpy.frombuffer(all[30], numpy.int16)))
+    # for dat in all:
+    #     print(numpy.frombuffer(dat, numpy.int16), '\n\n')
+    # print(len(all))
+    # print(len(numpy.frombuffer(all[30], numpy.int16)))
 
       #print(len(all[59]))
       #print(len(all[60]))
