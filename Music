@@ -1,0 +1,4 @@
+class Music
+  main()
+    print('hi')
+Music.main()
